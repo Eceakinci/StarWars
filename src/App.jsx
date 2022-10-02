@@ -1,16 +1,23 @@
-import InputComponent from "./inputComponent";
 import React, { useState } from "react";
-import TaskComponent from "./taskComponent";
-import ListComponent from "./listComponent";
+import Form from "./components/Form"
+import List from "./components/List";
+import Header from "./components/Header";
+/*This is parent component*/
 
 function App() {
-    const [childData, setChildData] = useState("")
-    //Burada tudu componentlerini cagir
-  return (
-    <div className="flex flex-col items-center justify-center p-24">
-        <InputComponent addTask={setChildData}/>
-        <ListComponent inputData={childData}/>
-    </div>
-  )
+
+    const [inputText, setInputText] = useState('')
+    const [todos, setTodos] = useState([])
+
+    return (
+        <div className="flex flex-col w-96 m-auto bg-gray-100 Comforta">
+            <Header/>
+            <div className="bg-white rounded-lg">
+                <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos}/>
+                <List todos={todos}/>
+            </div>
+
+        </div>
+    )
 }
 export default App
