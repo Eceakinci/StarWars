@@ -10,11 +10,11 @@ function App() {
     const [todos, setTodos] = useState([])
 
     return (
-        <div className="flex flex-col w-96 m-auto bg-gray-100 Comforta">
+        <div className="flex flex-col w-96 m-auto bg-gray-100">
             <Header/>
-            <div className="bg-white rounded-lg">
+            <div className="bg-white rounded-lg drop-shadow-lg shadow-gray-400/50">
                 <Form inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos}/>
-                <List todos={todos}/>
+                <List todos={todos} setTodos={setTodos}/>
             </div>
 
         </div>

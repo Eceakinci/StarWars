@@ -20,15 +20,19 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     }
 
     return (
-        <div className="flex">
-            <input className="w-96 border-b-2 border-gray-200 outline-none rounded-sm focus:border-b-indigo-500 focus:duration-300"
+        <div className="flex rounded-lg">
+            <input className="w-96 border-b-2 border-gray-200 outline-none rounded-sm focus:border-b-indigo-500 focus:duration-300 indent-2"
                    type="text"
                    placeholder="Enter task"
                    value={inputText}
-                   onChange={inputTextHandler}/>
-            <button className="text-sm bg-indigo-500 rounded-sm" onClick={submitTodoHandler} type="submit" value="Add">
-                Add Task
-            </button>
+                   onChange={inputTextHandler}
+                   onKeyPress={e => e.key === 'Enter' ? submitTodoHandler(e) : ''}/>
+            <div className="p-2">
+                <button className="text-sm bg-indigo-500 rounded-sm p-1" onClick={submitTodoHandler} type="submit" value="Add">
+                    Add
+                </button>
+            </div>
+
         </div>
     )
 }
