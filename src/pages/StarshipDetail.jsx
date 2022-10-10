@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
+import getData from "../api/getData";
 
 function StarshipDetail() {
     const [detail, setDetail] = useState([])
 
     const getDetail = async () => {
-        const data = await fetch('https://swapi.dev/api/starships/2')
-        const jsonData = await data.json()
-        setDetail(jsonData)
-        console.log(jsonData)
+        /**todo: detailurl comes here**/
+        const data = await getData('2')
+        setDetail(data)
     }
 
     useEffect(() => {
