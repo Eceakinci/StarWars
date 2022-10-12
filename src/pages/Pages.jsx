@@ -1,14 +1,14 @@
 import React from 'react'
 import Home from './Home';
 import { Route, Routes} from 'react-router-dom'
-import StarshipDetail from "./StarshipDetail";
-import Search from "./Search";
-import SearchBar from "../components/SearchBar";
+import StarshipDetail from './StarshipDetail';
+import Search from './Search';
+import SearchBar from '../components/SearchBar';
 
 function Pages() {
 
     return (
-        <div className='bg-neutral-900'>
+        <div className='bg-neutral-900 h-full block'>
             <SearchBar/>
             <Routes>
                 <Route path='/' element={<Home/>}/>

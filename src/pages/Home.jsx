@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
-import StarshipCard from "../components/StarshipCard";
-import LoadMoreButton from "../components/LoadMoreButton";
-import getData from "../api/getData";
+import StarshipCard from '../components/StarshipCard';
+import LoadMoreButton from '../components/LoadMoreButton';
+import getData from '../functions/getData';
 
 /**
  * Home page which contains all starships

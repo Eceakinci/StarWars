@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import getData from "../api/getData"
+import getData from '../functions/getData'
 import {useParams} from 'react-router-dom'
-import StarshipCard from "../components/StarshipCard";
+import StarshipCard from '../components/StarshipCard';
 
 function Search() {
 
@@ -11,7 +11,6 @@ function Search() {
     const getSearchedStarship = async (search) => {
         const data = await getData(`?search=${search}`)
         setSearchResult(data.results)
-        console.log(data.results)
     }
 
     useEffect(() => {
