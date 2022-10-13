@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Comfortaa';
-    src: local('Comfortaa'), url(public/fonts/Comfortaa-Regular.ttf) format('truetype');
+    src: local('Comfortaa'), url(/public/fonts/Comfortaa-Regular.ttf) format('truetype');
 }
 
 #root {
