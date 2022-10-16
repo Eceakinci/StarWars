@@ -14,7 +14,7 @@ function InfoComponent({ data }) {
         <div className='flex flex-col justify-center w-full p-4 text-sm'>
             {newDataModel.map((element) => {
                 return (
-                    <div className='flex justify-between ml-4' key={element.key}>
+                    <div className='flex justify-between lg:ml-4' key={element.key}>
                         <p className='font-semibold pr-1'>{element.key}</p>
                         <p>{element.value}</p>
                     </div>

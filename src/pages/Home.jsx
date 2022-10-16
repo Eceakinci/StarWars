@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import StarshipCard from '../components/StarshipCard';
 import LoadMoreButton from '../components/LoadMoreButton';
 import getData from '../functions/getData';
-import BackButton from "../components/BackButton";
 import SearchBar from "../components/SearchBar";
 
 /**
@@ -12,6 +11,8 @@ import SearchBar from "../components/SearchBar";
 function Home() {
 
     const [starships, setStarships] = useState([])
+    const [pageIdx, setPageIdx] = useState(2)
+    const [isVisible, setIsVisible] = useState(true)
 
     useEffect(() => {
         getStarships().then(r => r)
@@ -20,6 +21,21 @@ function Home() {
     const getStarships = async () => {
         const data = await getData('')
         setStarships(data.results)
+    }
+
+    const loadMore = async () => {
+        setPageIdx(pageIdx + 1)
+        let data = []
+
+        try {
+            data = await getData(`?page=${pageIdx}`)
+            setStarships([...starships, ...data.results])
+            if(data.next == null) {
+                setIsVisible(false)
+            }
+        } catch (e) {
+            throw e;
+        }
     }
 
     return (
@@ -32,7 +48,9 @@ function Home() {
                     )
                 })}
             </div>
-            <LoadMoreButton/>
+            <div onClick={loadMore} className={isVisible ? '' : 'hidden'}>
+                <LoadMoreButton/>
+            </div>
         </>
     )
 }

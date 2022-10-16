@@ -8,5 +8,8 @@
 }
 
 #root {
+    background-color: #171717;
     font-family: 'Comfortaa';
+    height: 100%;
+    min-height: 100vh;
 }

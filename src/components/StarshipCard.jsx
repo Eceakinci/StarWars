@@ -10,7 +10,7 @@ import images from '../data/images.json'
 function StarshipCard({ starship }) {
     return (
         <Link className='flex flex-col items-center text-indigo-300 lg:ease-in lg:duration-200 hover:scale-105 bg-stone-100 rounded-lg cursor-pointer'
-            to={splitUrl(starship.url)}>
+            to={'/' + splitUrl(starship.url)}>
             <h1 className='underline underline-offset-4 font-bold p-4'>{starship.name}</h1>
             <div className='p-4'>
                 <img src={images.find(img => img.url === splitUrl(starship.url)).imageUrl} alt={starship.name}

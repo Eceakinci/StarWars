@@ -24,7 +24,7 @@ function StarshipDetail() {
             <div className='grid grid-cols-6'>
                 <div className='col-start-2 col-end-6 items-center text-indigo-300 bg-stone-100 rounded-lg text-neutral-800'>
                     <h1 className='font-bold p-4 text-center'>{detail.name}</h1>
-                    <div className='flex '>
+                    <div className='grid lg:grid-cols-2'>
                         <div className='p-4'>
                             <img src={images.find(img => img.url === 'starships/' + params.id).imageUrl} alt={detail.name}
                                  className='rounded-lg shadow-xl'/>

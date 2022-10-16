@@ -13,6 +13,7 @@ function SearchBar() {
     const submitHandler = (e) => {
         e.preventDefault()
         navigate('/search/' + search)
+        setSearch('')
     }
 
     return (
