@@ -6,7 +6,7 @@ function Header() {
         <Link to='/'>
             <div className='flex justify-center'>
                 <div className='w-48 h-24 cursor-pointer'>
-                    <img src="/src/assets/logo.png" alt="" className=''/>
+                    <img src="https://starwarsapp-me.netlify.app/src/assets/logo.png" alt="" className=''/>
                 </div>
             </div>
         </Link>
