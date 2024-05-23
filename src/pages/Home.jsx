@@ -13,14 +13,26 @@ function Home() {
     const [starships, setStarships] = useState([])
     const [pageIdx, setPageIdx] = useState(2)
     const [isVisible, setIsVisible] = useState(true)
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
         getStarships().then(r => r)
+        window.addEventListener('scroll', handleScroll, { passive: true })
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
     }, [])
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position)
+    }
 
     const getStarships = async () => {
         const data = await getData('')
         setStarships(data.results)
+        window.scrollTo(0, Math.round(scrollPosition))
     }
 
     const loadMore = async () => {
